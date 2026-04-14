@@ -800,66 +800,60 @@
     @media print {
       @page {
         margin: 0 !important;
-        size: auto;
+        size: portrait;
       }
 
       * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
         color-adjust: exact !important;
-        break-inside: avoid;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
       }
 
-      html,
-      body {
-        height: 100vh !important;
+      html, body {
+        height: 100% !important;
         overflow: hidden !important;
         margin: 0 !important;
         padding: 0 !important;
         background: #0A1520 !important;
       }
 
-      body>*:not(#overlay) {
+      body > *:not(#overlay) {
         display: none !important;
       }
 
       #overlay {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        visibility: visible !important;
         display: flex !important;
+        visibility: visible !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
         background: #0A1520 !important;
         padding: 0 !important;
         margin: 0 !important;
-        overflow: hidden !important;
         align-items: center;
         justify-content: center;
-        z-index: 99999 !important;
       }
 
       .iwrap {
-        margin: 0 !important;
+        display: flex !important;
         width: 100% !important;
         height: 100% !important;
-        max-width: none !important;
-        display: flex !important;
         align-items: center;
         justify-content: center;
       }
 
       .card {
         visibility: visible !important;
-        width: 100% !important;
+        margin: auto !important;
+        width: 90% !important;
         height: auto !important;
-        max-height: 98vh !important;
-        border-radius: 0 !important;
+        max-height: 95vh !important;
         box-shadow: none !important;
         background: #0A1520 !important;
-        transform: scale(0.96);
-        transform-origin: center;
+        transform: scale(0.92) !important;
+        transform-origin: center !important;
       }
 
       .arow {
