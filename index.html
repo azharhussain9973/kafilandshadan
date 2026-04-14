@@ -693,6 +693,12 @@
     }
 
     @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+
       body * {
         visibility: hidden;
       }
@@ -708,6 +714,7 @@
         width: 100% !important;
         max-width: 100% !important;
         box-shadow: none !important;
+        background: #0A1520 !important;
       }
 
       .arow {
@@ -716,7 +723,7 @@
 
       .ovl {
         display: flex !important;
-        background: white !important;
+        background: #0A1520 !important;
       }
     }
   </style>
