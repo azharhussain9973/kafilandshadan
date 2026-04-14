@@ -799,7 +799,7 @@
 
     @media print {
       @page {
-        margin: 0;
+        margin: 0 !important;
         size: auto;
       }
 
@@ -807,9 +807,12 @@
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
         color-adjust: exact !important;
+        break-inside: avoid;
       }
 
-      body {
+      html, body {
+        height: 100vh !important;
+        overflow: hidden !important;
         margin: 0 !important;
         padding: 0 !important;
       }
@@ -819,38 +822,42 @@
       }
 
       .ovl {
-        position: absolute !important;
+        position: fixed !important;
         top: 0 !important;
         left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
+        width: 100vw !important;
+        height: 100vh !important;
         visibility: visible !important;
-        display: block !important;
+        display: flex !important;
         background: #0A1520 !important;
         padding: 0 !important;
+        margin: 0 !important;
         overflow: hidden !important;
+        align-items: center;
+        justify-content: center;
       }
 
       .iwrap {
         margin: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 100% !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: none !important;
         visibility: visible !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
       }
 
       .card {
         visibility: visible !important;
         width: 100% !important;
-        height: 100vh !important;
+        height: auto !important;
         max-height: 100vh !important;
         border-radius: 0 !important;
         box-shadow: none !important;
         background: #0A1520 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        padding: 20px !important;
+        transform: scale(0.98); /* Slight scale to ensure safety margins */
+        transform-origin: center;
       }
 
       .card * {
