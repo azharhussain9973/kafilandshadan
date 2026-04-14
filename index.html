@@ -816,13 +816,14 @@
         overflow: hidden !important;
         margin: 0 !important;
         padding: 0 !important;
+        background: #0A1520 !important;
       }
 
-      body * {
-        visibility: hidden;
+      body>*:not(#overlay) {
+        display: none !important;
       }
 
-      .ovl {
+      #overlay {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
@@ -836,14 +837,14 @@
         overflow: hidden !important;
         align-items: center;
         justify-content: center;
+        z-index: 99999 !important;
       }
 
       .iwrap {
         margin: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
+        width: 100% !important;
+        height: 100% !important;
         max-width: none !important;
-        visibility: visible !important;
         display: flex !important;
         align-items: center;
         justify-content: center;
@@ -853,17 +854,12 @@
         visibility: visible !important;
         width: 100% !important;
         height: auto !important;
-        max-height: 100vh !important;
+        max-height: 98vh !important;
         border-radius: 0 !important;
         box-shadow: none !important;
         background: #0A1520 !important;
-        transform: scale(0.98);
-        /* Slight scale to ensure safety margins */
+        transform: scale(0.96);
         transform-origin: center;
-      }
-
-      .card * {
-        visibility: visible !important;
       }
 
       .arow {
