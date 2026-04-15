@@ -670,6 +670,236 @@
       animation: shake .35s ease;
     }
 
+    /* Envelope Animation Styles */
+    .envelope-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      perspective: 2000px;
+    }
+
+    .envelope {
+      position: relative;
+      width: 320px;
+      height: 220px;
+      background: #0F4530;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      border-radius: 4px;
+      transition: all 0.8s ease;
+      animation: float 3s ease-in-out infinite;
+      z-index: 10;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0);
+      }
+
+      50% {
+        transform: translateY(-10px) rotate(1deg);
+      }
+    }
+
+    .envelope-wrapper.open .envelope {
+      animation: none;
+    }
+
+    .envelope-wrapper.final-view .envelope {
+      opacity: 0;
+      transform: translateY(100px) scale(0.5);
+      pointer-events: none;
+      height: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .envelope::before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      border-top: 110px solid transparent;
+      border-right: 160px solid #1A6B4A;
+      border-bottom: 110px solid #1A6B4A;
+      border-left: 160px solid transparent;
+      bottom: 0;
+      border-radius: 4px;
+    }
+
+    .envelope::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      border-top: 110px solid transparent;
+      border-right: 160px solid transparent;
+      border-bottom: 110px solid #14553A;
+      border-left: 160px solid #14553A;
+      bottom: 0;
+      border-radius: 4px;
+    }
+
+    .flap {
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-left: 160px solid transparent;
+      border-right: 160px solid transparent;
+      border-top: 130px solid #1A6B4A;
+      border-bottom: 0;
+      transform-origin: top;
+      transition: transform 0.8s ease 0.5s, z-index 0.2s 0.8s;
+      z-index: 3;
+      filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+    }
+
+    /* Gold border for flap */
+    .flap::before {
+      content: '';
+      position: absolute;
+      top: -132px;
+      left: -160px;
+      width: 0;
+      height: 0;
+      border-left: 160px solid transparent;
+      border-right: 160px solid transparent;
+      border-top: 130px solid #D4AF37;
+      z-index: -1;
+      transform: scale(1.02);
+    }
+
+    .envelope-wrapper.open .flap {
+      transform: rotateX(180deg);
+      z-index: 0;
+    }
+
+    .pocket {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1A6B4A;
+      z-index: 1;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .seal {
+      position: absolute;
+      top: 110px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: radial-gradient(circle, #E8D080, #D4AF37);
+      border-radius: 50%;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0A1520;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 0 4px rgba(255, 255, 255, 0.4);
+      transition: transform 0.4s ease, opacity 0.4s ease 0.4s;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .envelope-wrapper.open .seal {
+      transform: translate(-50%, -240px) rotateX(180deg);
+      opacity: 0;
+    }
+
+    /* Letter / Card Container */
+    .letter-container {
+      width: 280px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      margin-top: -30px;
+      z-index: 5;
+      transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) 1.2s;
+    }
+
+    .envelope-wrapper.open .letter-container {
+      max-height: 200px;
+      opacity: 1;
+      margin-top: -60px;
+    }
+
+    .envelope-wrapper.final-view .letter-container {
+      max-height: none;
+      overflow: visible;
+      opacity: 1;
+      width: 100%;
+      max-width: 700px;
+      margin-top: 0;
+      transition: all 0.6s ease;
+    }
+
+    .envelope-wrapper.final-view .letter-container .card {
+      animation: cardReveal 0.6s ease forwards;
+    }
+
+    @keyframes cardReveal {
+      from {
+        opacity: 0.8;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media(max-width: 600px) {
+      .envelope {
+        width: 280px;
+        height: 190px;
+      }
+
+      .envelope::before,
+      .envelope::after {
+        border-right-width: 140px;
+        border-left-width: 140px;
+        border-top-width: 95px;
+        border-bottom-width: 95px;
+      }
+
+      .flap {
+        border-left-width: 140px;
+        border-right-width: 140px;
+        border-top-width: 115px;
+      }
+
+      .flap::before {
+        top: -117px;
+        left: -140px;
+        border-left-width: 140px;
+        border-right-width: 140px;
+        border-top-width: 115px;
+      }
+
+      .envelope-wrapper.open .letter-container {
+        max-height: 180px;
+        margin-top: -50px;
+      }
+
+      .letter-container {
+        width: 250px;
+      }
+
+      .seal {
+        top: 95px;
+      }
+    }
+
     @media(max-width: 600px) {
       .page {
         padding: 0.5rem;
@@ -919,65 +1149,77 @@
     </div>
   </div>
   <div class="ovl" id="overlay">
-    <div class="iwrap">
-      <div class="card">
-        <div class="cb t"></div>
-        <div class="ibody">
-          <div class="ifrm">
-            <div class="igm tl"></div>
-            <div class="igm tr"></div>
-            <div class="igm bl"></div>
-            <div class="igm br"></div>
-            <span class="ibism">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
-            <p class="islm">Assalamu Alaikum Wa Rahmatullahi Wa Barakatuhu</p>
-            <div class="idv">
-              <div class="dl"></div>
-              <div class="dg2"></div>
-              <div class="dg"></div>
-              <div class="dg2"></div>
-              <div class="dl"></div>
-            </div>
-            <div class="itac">
-              <div class="ibdg">— WALIMA —</div>
-            </div>
-            <p class="igreet">With the blessings of Allah (SWT), we joyfully invite</p>
-            <p class="iguest" id="guestName">Dear Guest</p>
-            <p class="itxt">to the blessed Walima celebration of our beloved</p>
-            <div class="inms">
-              <div class="inmb"><span class="intit">DULHA</span>
-                <p class="inbig hn">Kafilur Rahman</p><span class="insub">Son of Hasibur Rahman</span>
+    <div class="iwrap" id="iwrap">
+      <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope">
+          <div class="flap"></div>
+          <div class="seal">✧</div>
+          <div class="pocket"></div>
+        </div>
+        <div class="letter-container" id="letterContainer">
+          <div class="card" id="mainCard">
+            <div class="cb t"></div>
+            <div class="ibody">
+              <div class="ifrm">
+                <div class="igm tl"></div>
+                <div class="igm tr"></div>
+                <div class="igm bl"></div>
+                <div class="igm br"></div>
+                <span class="ibism">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
+                <p class="islm">Assalamu Alaikum Wa Rahmatullahi Wa Barakatuhu</p>
+                <div class="idv">
+                  <div class="dl"></div>
+                  <div class="dg2"></div>
+                  <div class="dg"></div>
+                  <div class="dg2"></div>
+                  <div class="dl"></div>
+                </div>
+                <div class="itac">
+                  <div class="ibdg">— WALIMA —</div>
+                </div>
+                <p class="igreet">With the blessings of Allah (SWT), we joyfully invite</p>
+                <p class="iguest" id="guestName">Dear Guest</p>
+                <p class="itxt">to the blessed Walima celebration of our beloved</p>
+                <div class="inms">
+                  <div class="inmb"><span class="intit">DULHA</span>
+                    <p class="inbig hn">Kafilur Rahman</p><span class="insub">Son of Hasibur Rahman</span>
+                  </div>
+                  <div class="isepb"><span class="bs">✦</span><small>Weds</small></div>
+                  <div class="inmb"><span class="intit">DULHAN</span>
+                    <p class="inbig wn">Shadan Saltanat</p><span class="insub">Daughter of Ashwaque Alam</span>
+                  </div>
+                </div>
+                <div class="idv">
+                  <div class="dl"></div>
+                  <div class="dg"></div>
+                  <div class="dg2"></div>
+                  <div class="dg"></div>
+                  <div class="dl"></div>
+                </div>
+                <div class="wbox">
+                  <span class="wlbl">Walima Ceremony Details</span>
+                  <span class="wdate">Saturday, 13 June 2026</span>
+                  <span class="wtime">7:00 PM – 10:00 PM &nbsp;·&nbsp; Dinner</span>
+                  <span class="wvenue">Venue: Purani Haveli, Peerbigha Chakand, Gaya</span>
+                </div>
+                <div class="ifoot">
+                  <p>Your presence will honour us and complete our joy.<br>We await you with love and prayers.</p>
+                  <span class="idua">جَزَاكَ اللّٰهُ خَيْرًا</span>
+                  <span class="ifam">- Families of Hasibur Rahman</span>
+                </div>
               </div>
-              <div class="isepb"><span class="bs">✦</span><small>Weds</small></div>
-              <div class="inmb"><span class="intit">DULHAN</span>
-                <p class="inbig wn">Shadan Saltanat</p><span class="insub">Daughter of Ashwaque Alam</span>
-              </div>
             </div>
-            <div class="idv">
-              <div class="dl"></div>
-              <div class="dg"></div>
-              <div class="dg2"></div>
-              <div class="dg"></div>
-              <div class="dl"></div>
-            </div>
-            <div class="wbox">
-              <span class="wlbl"> Walima Ceremony Details</span>
-              <span class="wdate">Saturday, 13 June 2026</span>
-              <span class="wtime">7:00 PM – 10:00 PM &nbsp;·&nbsp; Dinner</span>
-              <span class="wvenue"> Venue:Purani Haveli,Peerbigha Chakand,Gaya</span>
-            </div>
-            <div class="ifoot">
-              <p>Your presence will honour us and complete our joy.<br>We await you with love and prayers.</p>
-              <span class="idua">جَزَاكَ اللّٰهُ خَيْرًا</span>
-              <span class="ifam">- Families of Hasibur Rahman </span>
-            </div>
+            <div class="cb b"></div>
           </div>
         </div>
-        <div class="cb b"></div>
       </div>
-      <div class="arow"><button class="bprint" onclick="window.print()">PRINT</button><button class="bclose"
-          onclick="closeCard()">CLOSE</button></div>
+      <div class="arow" id="actionRow" style="display:none;">
+        <button class="bprint" onclick="window.print()">PRINT</button>
+        <button class="bclose" onclick="closeCard()">CLOSE</button>
+      </div>
     </div>
   </div>
+
   <script>
     (function () {
       const petals = document.getElementById('petals');
@@ -1003,13 +1245,39 @@
       }
       const formattedName = name.split(/\s+/).map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
       document.getElementById('guestName').textContent = formattedName;
+
+      // Reset state
+      const wrapper = document.getElementById('envelopeWrapper');
+      const actionRow = document.getElementById('actionRow');
+      wrapper.classList.remove('open', 'final-view');
+      actionRow.style.display = 'none';
+
       document.getElementById('overlay').classList.add('show');
       document.getElementById('overlay').scrollTop = 0;
       document.body.style.overflow = 'hidden';
+
+      // Animation sequence: 1) open envelope after 600ms
+      setTimeout(() => {
+        wrapper.classList.add('open');
+      }, 600);
+
+      // 2) reveal full card after 3s
+      setTimeout(() => {
+        wrapper.classList.add('final-view');
+        actionRow.style.display = 'flex';
+        document.getElementById('overlay').scrollTop = 0;
+      }, 3000);
     }
+
     function closeCard() {
       document.getElementById('overlay').classList.remove('show');
       document.body.style.overflow = '';
+      // Reset after closing
+      setTimeout(() => {
+        const wrapper = document.getElementById('envelopeWrapper');
+        wrapper.classList.remove('open', 'final-view');
+        document.getElementById('actionRow').style.display = 'none';
+      }, 500);
     }
     document.getElementById('guestInput').addEventListener('keydown', function (event) { if (event.key === 'Enter') openCard(); });
     document.getElementById('guestInput').addEventListener('input', function () {
