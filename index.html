@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Walima Invitation - Kafil and Shadan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Walima Invitation - Kafil & Shadan</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Scheherazade+New:wght@400;700&display=swap"
     rel="stylesheet">
@@ -13,6 +13,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -126,11 +127,11 @@
 
       0%,
       100% {
-        opacity: .8;
+        opacity: .8
       }
 
       50% {
-        opacity: 1;
+        opacity: 1
       }
     }
 
@@ -175,7 +176,8 @@
       font-style: italic;
     }
 
-    .div2 {
+    .div2,
+    .idv {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -183,7 +185,8 @@
       margin: 1.2rem 0;
     }
 
-    .div2 .dl {
+    .div2 .dl,
+    .idv .dl {
       height: 1px;
       flex: 1;
       max-width: 80px;
@@ -191,18 +194,11 @@
     }
 
     .idv {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
       margin: 1rem 0;
     }
 
     .idv .dl {
-      height: 1px;
-      flex: 1;
       max-width: 100px;
-      background: linear-gradient(90deg, transparent, rgba(34, 160, 107, .5), transparent);
     }
 
     .div2 .dg,
@@ -257,7 +253,6 @@
       background: white;
       text-align: center;
       outline: none;
-      transition: border-color .3s, box-shadow .3s;
       border: 1.5px solid rgba(34, 160, 107, .4);
       color: #0A1520;
     }
@@ -265,11 +260,6 @@
     .ninput:focus {
       border-color: #22A06B;
       box-shadow: 0 0 0 3px rgba(34, 160, 107, .15);
-    }
-
-    .ninput::placeholder {
-      font-style: italic;
-      opacity: .45;
     }
 
     .obtn {
@@ -283,9 +273,9 @@
       border: none;
       border-radius: 2px;
       cursor: pointer;
-      transition: all .3s;
       background: linear-gradient(135deg, #0F4530, #1A6B4A);
       color: #D4F0E0;
+      transition: all .3s;
     }
 
     .obtn:hover {
@@ -294,18 +284,15 @@
       box-shadow: 0 8px 20px rgba(26, 107, 74, .4);
     }
 
-    .obtn:active {
-      transform: translateY(0);
-    }
-
+    /* Overlay & envelope */
     .ovl {
       display: none;
       position: fixed;
       inset: 0;
       z-index: 3000;
-      background: rgba(5, 5, 15, .93);
+      background: rgba(5, 5, 15, .96);
       overflow-y: auto;
-      padding: 1.5rem 1rem 3rem;
+      padding: 1rem;
       align-items: flex-start;
       justify-content: center;
     }
@@ -316,358 +303,13 @@
 
     .iwrap {
       width: 100%;
-      max-width: 700px;
-      margin: 0 auto;
-      padding-bottom: 2rem;
-    }
-
-    .card {
-      background: #0A1520;
-      border-radius: 3px;
-      box-shadow: 0 0 0 1px rgba(34, 160, 107, .4), 0 0 0 4px rgba(34, 160, 107, .08), 0 40px 80px rgba(0, 0, 0, .8);
-      animation: popIn .5s cubic-bezier(.16, 1, .3, 1) forwards;
-    }
-
-    @keyframes popIn {
-      from {
-        opacity: 0;
-        transform: scale(.88);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .cb {
-      height: 5px;
-      background: linear-gradient(90deg, #0F4530, #22A06B, #D4AF37, #22A06B, #0F4530);
-    }
-
-    .cb.t {
-      border-radius: 3px 3px 0 0;
-    }
-
-    .cb.b {
-      border-radius: 0 0 3px 3px;
-    }
-
-    .ibody {
-      padding: 2.5rem 3rem;
-    }
-
-    .ifrm {
-      padding: 2rem 2.5rem;
-      position: relative;
-      border: 1.5px solid rgba(34, 160, 107, .35);
-    }
-
-    .ifrm::before {
-      content: '❋';
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0A1520;
-      padding: 0 12px;
-      color: #22A06B;
-      font-size: 1.2rem;
-    }
-
-    .ifrm::after {
-      content: '';
-      position: absolute;
-      inset: 5px;
-      border: .5px solid rgba(212, 175, 55, .12);
-      pointer-events: none;
-    }
-
-    .igm.tl {
-      top: -5px;
-      left: -5px;
-    }
-
-    .igm.tr {
-      top: -5px;
-      right: -5px;
-    }
-
-    .igm.bl {
-      bottom: -5px;
-      left: -5px;
-    }
-
-    .igm.br {
-      bottom: -5px;
-      right: -5px;
-    }
-
-    .ibism {
-      font-family: 'Scheherazade New', serif;
-      font-size: 2rem;
-      text-align: center;
-      display: block;
-      color: #22A06B;
-    }
-
-    .islm {
-      text-align: center;
-      font-size: .82rem;
-      font-style: italic;
-      letter-spacing: .04em;
-      margin-top: .3rem;
-      color: rgba(150, 220, 190, .5);
-    }
-
-    .ibdg {
-      display: inline-block;
-      font-family: 'Cinzel', serif;
-      font-size: .65rem;
-      letter-spacing: .32em;
-      margin: 1.2rem auto;
-      color: #22A06B;
-      padding: 5px 22px;
-      border-top: 1.5px solid rgba(34, 160, 107, .5);
-      border-bottom: 1.5px solid rgba(34, 160, 107, .5);
-    }
-
-    .itac {
-      text-align: center;
-    }
-
-    .igreet {
-      text-align: center;
-      font-size: .88rem;
-      font-style: italic;
-      margin-bottom: .3rem;
-      color: rgba(150, 220, 190, .55);
-    }
-
-    .iguest {
-      text-align: center;
-      font-weight: 600;
-      margin: .4rem 0;
-      font-family: 'EB Garamond', serif;
-      font-size: 2.2rem;
-      color: #D4F5E8;
-      letter-spacing: .02em;
-      font-style: italic;
-    }
-
-    .itxt {
-      text-align: center;
-      font-size: .92rem;
-      line-height: 1.9;
-      margin: .5rem 0;
-      color: rgba(180, 230, 210, .65);
-    }
-
-    .inms {
+      max-width: 720px;
+      margin: auto;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1.5rem;
-      margin: 1.2rem 0;
-      flex-wrap: wrap;
-    }
-
-    .inmb {
-      text-align: center;
-    }
-
-    .intit {
-      font-size: .58rem;
-      font-family: 'Cinzel', serif;
-      letter-spacing: .2em;
-      margin-bottom: 4px;
-      display: block;
-      color: rgba(34, 160, 107, .7);
-    }
-
-    .inbig {
-      font-size: 1.4rem;
-      line-height: 1.2;
-      font-family: 'Cinzel', serif;
-      font-weight: 500;
-      letter-spacing: .04em;
-    }
-
-    .hn {
-      color: #E8D080;
-    }
-
-    .wn {
-      color: #90E4C0;
-    }
-
-    .insub {
-      font-size: .72rem;
-      font-style: italic;
-      margin-top: 2px;
-      display: block;
-      color: rgba(150, 210, 180, .5);
-    }
-
-    .isepb {
-      text-align: center;
-      flex-shrink: 0;
-    }
-
-    .bs {
-      font-family: 'Scheherazade New', serif;
-      color: #D4AF37;
-      font-size: 1.6rem;
-      display: block;
-    }
-
-    .isepb small {
-      font-size: .65rem;
-      font-style: italic;
-      letter-spacing: .1em;
-      color: rgba(212, 175, 55, .5);
-    }
-
-    .wbox {
-      border-radius: 2px;
-      padding: 1.2rem 1.5rem;
-      margin: 1.2rem 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(34, 160, 107, .3);
-      background: linear-gradient(135deg, rgba(34, 160, 107, .06), rgba(212, 175, 55, .04));
-    }
-
-    .wbox::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #22A06B, transparent);
-    }
-
-    .wlbl {
-      font-family: 'Cinzel', serif;
-      font-size: .58rem;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      margin-bottom: .8rem;
-      display: block;
-      color: #22A06B;
-    }
-
-    .wdate {
-      font-family: 'Cinzel', serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      display: block;
-      margin-bottom: 3px;
-      color: #D4F0E0;
-    }
-
-    .wtime {
-      font-size: .9rem;
-      font-style: italic;
-      display: block;
-      margin-bottom: 3px;
-      color: rgba(150, 230, 190, .7);
-    }
-
-    .wvenue {
-      font-size: .78rem;
-      display: block;
-      margin-top: 5px;
-      color: #22A06B;
-    }
-
-    .ifoot {
-      text-align: center;
-      margin-top: 1rem;
-      font-size: .85rem;
-      line-height: 1.9;
-      color: rgba(180, 230, 210, .6);
-    }
-
-    .idua {
-      font-family: 'Scheherazade New', serif;
-      font-size: 1.2rem;
-      display: block;
-      margin-top: .4rem;
-      color: #22A06B;
-    }
-
-    .ifam {
-      font-size: .72rem;
-      letter-spacing: .1em;
-      margin-top: 5px;
-      display: block;
-      font-style: italic;
-      color: rgba(34, 160, 107, .5);
-    }
-
-    .arow {
-      background: rgba(5, 5, 15, .5);
-      padding: 1.2rem;
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .bprint,
-    .bclose {
-      padding: .75rem 2rem;
-      font-family: 'Cinzel', serif;
-      font-size: .72rem;
-      letter-spacing: .2em;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: all .3s;
-    }
-
-    .bprint {
-      background: #22A06B;
-      color: #0A1520;
-      border: none;
-      font-weight: 600;
-    }
-
-    .bprint:hover {
-      filter: brightness(1.15);
-      transform: translateY(-1px);
-    }
-
-    .bclose {
-      background: transparent;
-      color: rgba(245, 233, 196, .7);
-      border: 1px solid rgba(200, 169, 81, .35);
-    }
-
-    .bclose:hover {
-      background: rgba(200, 169, 81, .1);
-    }
-
-    @keyframes shake {
-
-      0%,
-      100% {
-        transform: translateX(0)
-      }
-
-      25% {
-        transform: translateX(-6px)
-      }
-
-      75% {
-        transform: translateX(6px)
-      }
-    }
-
-    .shake {
-      animation: shake .35s ease;
+      min-height: 100%;
     }
 
     /* Envelope Animation Styles */
@@ -678,8 +320,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      perspective: 2000px;
+      transition: all 0.4s ease;
     }
 
     .envelope {
@@ -689,20 +330,21 @@
       background: #0F4530;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       border-radius: 4px;
-      transition: all 0.8s ease;
+      transition: all 0.6s ease;
       animation: float 3s ease-in-out infinite;
       z-index: 10;
+      margin-bottom: 10px;
     }
 
     @keyframes float {
 
       0%,
       100% {
-        transform: translateY(0) rotate(0);
+        transform: translateY(0) rotate(0)
       }
 
       50% {
-        transform: translateY(-10px) rotate(1deg);
+        transform: translateY(-8px) rotate(1deg)
       }
     }
 
@@ -712,7 +354,7 @@
 
     .envelope-wrapper.final-view .envelope {
       opacity: 0;
-      transform: translateY(100px) scale(0.5);
+      transform: translateY(60px) scale(0.6);
       pointer-events: none;
       height: 0;
       margin: 0;
@@ -728,7 +370,6 @@
       border-bottom: 110px solid #1A6B4A;
       border-left: 160px solid transparent;
       bottom: 0;
-      border-radius: 4px;
     }
 
     .envelope::after {
@@ -740,7 +381,6 @@
       border-bottom: 110px solid #14553A;
       border-left: 160px solid #14553A;
       bottom: 0;
-      border-radius: 4px;
     }
 
     .flap {
@@ -751,14 +391,11 @@
       border-left: 160px solid transparent;
       border-right: 160px solid transparent;
       border-top: 130px solid #1A6B4A;
-      border-bottom: 0;
       transform-origin: top;
-      transition: transform 0.8s ease 0.5s, z-index 0.2s 0.8s;
+      transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1) 0.4s;
       z-index: 3;
-      filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
     }
 
-    /* Gold border for flap */
     .flap::before {
       content: '';
       position: absolute;
@@ -775,7 +412,7 @@
 
     .envelope-wrapper.open .flap {
       transform: rotateX(180deg);
-      z-index: 0;
+      z-index: 1;
     }
 
     .pocket {
@@ -787,7 +424,6 @@
       background: #1A6B4A;
       z-index: 1;
       border-radius: 4px;
-      overflow: hidden;
     }
 
     .seal {
@@ -807,8 +443,7 @@
       font-size: 1.1rem;
       font-weight: bold;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 0 4px rgba(255, 255, 255, 0.4);
-      transition: transform 0.4s ease, opacity 0.4s ease 0.4s;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.4s ease, opacity 0.3s ease 0.3s;
     }
 
     .envelope-wrapper.open .seal {
@@ -816,56 +451,412 @@
       opacity: 0;
     }
 
-    /* Letter / Card Container */
+    /* Letter Container - mobile friendly stack */
     .letter-container {
-      width: 280px;
+      width: 100%;
+      max-width: 700px;
       max-height: 0;
       overflow: hidden;
       opacity: 0;
-      margin-top: -30px;
+      margin-top: -40px;
+      transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1) 1s;
       z-index: 5;
-      transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) 1.2s;
     }
 
     .envelope-wrapper.open .letter-container {
-      max-height: 200px;
+      max-height: 800px;
       opacity: 1;
-      margin-top: -60px;
+      margin-top: -50px;
     }
 
     .envelope-wrapper.final-view {
-      min-height: auto;
       justify-content: flex-start;
-      padding-top: 1rem;
+      min-height: auto;
+      width: 100%;
     }
 
     .envelope-wrapper.final-view .letter-container {
       max-height: none;
-      overflow: visible;
       opacity: 1;
       width: 100%;
-      max-width: 700px;
       margin-top: 0;
-      transition: all 0.6s ease;
+      transition: all 0.5s ease;
     }
 
-    .envelope-wrapper.final-view .letter-container .card {
-      animation: cardReveal 0.6s ease forwards;
+    .card {
+      background: #0A1520;
+      border-radius: 3px;
+      box-shadow: 0 0 0 1px rgba(34, 160, 107, .4), 0 0 0 4px rgba(34, 160, 107, .08), 0 40px 80px rgba(0, 0, 0, .8);
+      width: 100%;
+      margin: 0 auto;
     }
 
-    @keyframes cardReveal {
-      from {
-        opacity: 0.8;
-        transform: scale(0.95);
+    .cb {
+      height: 5px;
+      background: linear-gradient(90deg, #0F4530, #22A06B, #D4AF37, #22A06B, #0F4530);
+    }
+
+    .cb.t {
+      border-radius: 3px 3px 0 0;
+    }
+
+    .cb.b {
+      border-radius: 0 0 3px 3px;
+    }
+
+    .ibody {
+      padding: 2rem 2rem;
+    }
+
+    .ifrm {
+      padding: 1.8rem 2rem;
+      position: relative;
+      border: 1.5px solid rgba(34, 160, 107, .35);
+    }
+
+    .ifrm::before {
+      content: '❋';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0A1520;
+      padding: 0 12px;
+      color: #22A06B;
+      font-size: 1.2rem;
+    }
+
+    .igm {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+    }
+
+    .igm.tl {
+      top: -4px;
+      left: -4px;
+    }
+
+    .igm.tr {
+      top: -4px;
+      right: -4px;
+    }
+
+    .igm.bl {
+      bottom: -4px;
+      left: -4px;
+    }
+
+    .igm.br {
+      bottom: -4px;
+      right: -4px;
+    }
+
+    .ibism {
+      font-family: 'Scheherazade New', serif;
+      font-size: 2rem;
+      text-align: center;
+      display: block;
+      color: #22A06B;
+    }
+
+    .islm {
+      text-align: center;
+      font-size: .82rem;
+      font-style: italic;
+      color: rgba(150, 220, 190, .5);
+      margin-top: .3rem;
+    }
+
+    .ibdg {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: .65rem;
+      letter-spacing: .32em;
+      margin: 1rem auto;
+      color: #22A06B;
+      padding: 5px 22px;
+      border-top: 1.5px solid rgba(34, 160, 107, .5);
+      border-bottom: 1.5px solid rgba(34, 160, 107, .5);
+    }
+
+    .igreet {
+      text-align: center;
+      font-size: .88rem;
+      font-style: italic;
+      color: rgba(150, 220, 190, .55);
+    }
+
+    .iguest {
+      text-align: center;
+      font-weight: 600;
+      margin: .5rem 0;
+      font-size: 2rem;
+      color: #D4F5E8;
+      letter-spacing: .02em;
+      font-style: italic;
+      word-break: break-word;
+    }
+
+    .itxt {
+      text-align: center;
+      font-size: .92rem;
+      line-height: 1.5;
+      margin: .5rem 0;
+      color: rgba(180, 230, 210, .65);
+    }
+
+    .inms {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .inmb {
+      text-align: center;
+    }
+
+    .intit {
+      font-size: .58rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: .2em;
+      color: rgba(34, 160, 107, .7);
+    }
+
+    .inbig {
+      font-size: 1.4rem;
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+    }
+
+    .hn {
+      color: #E8D080;
+    }
+
+    .wn {
+      color: #90E4C0;
+    }
+
+    .insub {
+      font-size: .7rem;
+      font-style: italic;
+      color: rgba(150, 210, 180, .5);
+    }
+
+    .isepb {
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .bs {
+      font-family: 'Scheherazade New', serif;
+      color: #D4AF37;
+      font-size: 1.4rem;
+    }
+
+    .wbox {
+      border-radius: 2px;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      text-align: center;
+      border: 1px solid rgba(34, 160, 107, .3);
+      background: linear-gradient(135deg, rgba(34, 160, 107, .06), rgba(212, 175, 55, .04));
+    }
+
+    .wlbl {
+      font-family: 'Cinzel', serif;
+      font-size: .58rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: #22A06B;
+    }
+
+    .wdate {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: block;
+      margin: 6px 0 2px;
+      color: #D4F0E0;
+    }
+
+    .wtime {
+      font-size: .9rem;
+      font-style: italic;
+      color: rgba(150, 230, 190, .7);
+    }
+
+    .wvenue {
+      font-size: .78rem;
+      margin-top: 5px;
+      color: #22A06B;
+    }
+
+    .ifoot {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: .85rem;
+      color: rgba(180, 230, 210, .6);
+    }
+
+    .idua {
+      font-family: 'Scheherazade New', serif;
+      font-size: 1.2rem;
+      display: block;
+      margin-top: .4rem;
+      color: #22A06B;
+    }
+
+    .ifam {
+      font-size: .72rem;
+      letter-spacing: .1em;
+      margin-top: 5px;
+      font-style: italic;
+      color: rgba(34, 160, 107, .5);
+    }
+
+    /* BUTTON ROW FIX: always at bottom on mobile, anchored inside wrapper */
+    .arow {
+      background: #0A1520;
+      padding: 1rem 1rem;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 700px;
+      margin: 1.5rem auto 0 auto;
+      border-radius: 40px;
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.4);
+      border-top: 1px solid rgba(34, 160, 107, 0.3);
+      position: sticky;
+      bottom: 8px;
+      backdrop-filter: blur(8px);
+      background: rgba(10, 21, 32, 0.95);
+      z-index: 50;
+    }
+
+    .bprint,
+    .bclose {
+      flex: 1;
+      padding: 0.85rem 0.5rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: .2em;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-align: center;
+      font-weight: 600;
+      border: none;
+    }
+
+    .bprint {
+      background: #22A06B;
+      color: #0A1520;
+    }
+
+    .bprint:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+    }
+
+    .bclose {
+      background: transparent;
+      color: rgba(245, 233, 196, 0.85);
+      border: 1px solid rgba(200, 169, 81, 0.6);
+    }
+
+    .bclose:hover {
+      background: rgba(200, 169, 81, 0.15);
+    }
+
+    .shake {
+      animation: shake .35s ease;
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0)
       }
 
-      to {
-        opacity: 1;
-        transform: scale(1);
+      25% {
+        transform: translateX(-5px)
+      }
+
+      75% {
+        transform: translateX(5px)
       }
     }
 
-    @media(max-width: 600px) {
+    /* Mobile refinement */
+    @media (max-width: 640px) {
+      .inn {
+        padding: 1.5rem 1rem 1.8rem;
+      }
+
+      .obord {
+        padding: 1rem 0.8rem;
+      }
+
+      .mstar {
+        font-size: 1.3rem;
+      }
+
+      .bismi {
+        font-size: 1.5rem;
+      }
+
+      .dname {
+        font-size: 1.2rem;
+      }
+
+      .ibody {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .ifrm {
+        padding: 1rem 0.8rem;
+      }
+
+      .iguest {
+        font-size: 1.5rem;
+      }
+
+      .inbig {
+        font-size: 1.1rem;
+      }
+
+      .wdate {
+        font-size: 1rem;
+      }
+
+      .wtime {
+        font-size: 0.75rem;
+      }
+
+      .wbox {
+        padding: 0.7rem 0.5rem;
+      }
+
+      .arow {
+        gap: 10px;
+        padding: 0.8rem 1rem;
+        margin-top: 1rem;
+      }
+
+      .bprint,
+      .bclose {
+        font-size: 0.65rem;
+        padding: 0.7rem 0.2rem;
+        white-space: nowrap;
+      }
+
       .envelope {
         width: 280px;
         height: 190px;
@@ -893,176 +884,35 @@
         border-top-width: 115px;
       }
 
-      .envelope-wrapper.open .letter-container {
-        max-height: 180px;
-        margin-top: -50px;
-      }
-
-      .letter-container {
-        width: 250px;
-      }
-
       .seal {
         top: 95px;
-      }
-
-      .envelope-wrapper.final-view {
-        padding-top: 0.5rem;
-      }
-
-      .envelope-wrapper.final-view .letter-container {
-        width: 100%;
-        max-width: 100%;
-      }
-    }
-
-    @media(max-width: 600px) {
-      .page {
-        padding: 0.5rem;
-      }
-
-      .inn {
-        padding: 1rem;
-      }
-
-      .obord {
-        padding: 1rem 0.6rem;
-      }
-
-      .mstar {
-        font-size: 1.2rem;
-        margin-bottom: 0.2rem;
-      }
-
-      .bismi {
-        font-size: 1.4rem;
-        margin-bottom: 0.2rem;
-      }
-
-      .badge {
-        font-size: 0.5rem;
-        padding: 3px 8px;
-        margin-bottom: 0.5rem;
-      }
-
-      .dname {
-        font-size: 1.2rem;
-      }
-
-      .ibody {
-        padding: 1rem 0.8rem;
-      }
-
-      .ifrm {
-        padding: 1rem 0.5rem;
-      }
-
-      .ibism {
-        font-size: 1.5rem;
-      }
-
-      .iguest {
-        font-size: 1.5rem;
-        margin: 0.1rem 0;
-      }
-
-      .itxt {
-        font-size: 0.78rem;
-        line-height: 1.5;
-        margin: 0.3rem 0;
-      }
-
-      .inbig {
-        font-size: 1rem;
-      }
-
-      .isepb .bs {
-        font-size: 1rem;
-      }
-
-      .wdate {
+        width: 36px;
+        height: 36px;
         font-size: 0.9rem;
       }
 
-      .wtime {
-        font-size: 0.75rem;
-      }
-
-      .wvenue {
-        font-size: 0.7rem;
-      }
-
-      .inms {
-        display: flex;
-        flex-direction: column;
-        gap: 0.3rem;
-        margin: 0.6rem 0;
-      }
-
-      .wbox {
-        padding: 0.8rem 0.5rem;
-        margin: 0.6rem 0;
-      }
-
-      .ifoot {
-        font-size: 0.75rem;
-        line-height: 1.6;
-        margin-top: 0.5rem;
-      }
-
-      .idua {
-        font-size: 1.1rem;
-        margin-top: 0.2rem;
-      }
-
-      .arow {
-        padding: 0.8rem;
-        position: sticky;
-        bottom: 0;
-        background: #0A1520;
+      .letter-container {
         width: 100%;
-        border-top: 1px solid rgba(34, 160, 107, 0.3);
-        display: flex;
-        flex-direction: row !important;
-        /* Force horizontal */
-        flex-wrap: nowrap !important;
-        /* Prevent wrapping */
-        gap: 8px;
-        z-index: 100;
-      }
-
-      .bprint,
-      .bclose {
-        flex: 1;
-        padding: 0.8rem 0.2rem;
-        font-size: 0.65rem;
-        text-align: center;
-        white-space: nowrap;
-        min-width: 0;
-        /* Allow shrinking */
       }
     }
 
     @media print {
       @page {
-        margin: 0 !important;
+        margin: 0;
         size: auto;
       }
 
       * {
         -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-        color-adjust: exact !important;
-        break-inside: avoid;
+        print-color-adjust: exact;
       }
 
-      html,
-      body {
-        height: 100vh !important;
-        overflow: hidden !important;
-        margin: 0 !important;
-        padding: 0 !important;
+      body,
+      html {
         background: #0A1520 !important;
+        overflow: hidden !important;
+        height: 100vh;
+        margin: 0;
       }
 
       body>*:not(#overlay) {
@@ -1071,45 +921,48 @@
 
       #overlay {
         position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        visibility: visible !important;
+        inset: 0;
         display: flex !important;
         background: #0A1520 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        overflow: hidden !important;
+        z-index: 999999;
+        overflow: hidden;
         align-items: center;
         justify-content: center;
-        z-index: 99999 !important;
       }
 
       .iwrap {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .envelope-wrapper,
+      .envelope,
+      .flap,
+      .seal {
+        display: none !important;
+      }
+
+      .letter-container {
+        max-height: none !important;
+        opacity: 1 !important;
         margin: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        max-width: none !important;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
+        width: 100%;
       }
 
       .card {
-        visibility: visible !important;
-        width: 100% !important;
-        height: auto !important;
-        max-height: 98vh !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        background: #0A1520 !important;
         transform: scale(0.96);
-        transform-origin: center;
+        box-shadow: none;
+        margin: 0 auto;
       }
 
       .arow {
         display: none !important;
+      }
+
+      .ovl {
+        padding: 0;
       }
     }
   </style>
@@ -1158,12 +1011,13 @@
           <span class="ilbl">✦ Enter Your Name to Open ✦</span>
           <input type="text" id="guestInput" class="ninput" placeholder="Your name here..." maxlength="60"
             autocomplete="off">
-          <button class="obtn" onclick="openCard()">OPEN CARD</button>
+          <button class="obtn" id="openBtn">OPEN CARD</button>
         </div>
       </div>
       <div class="botbar"></div>
     </div>
   </div>
+
   <div class="ovl" id="overlay">
     <div class="iwrap" id="iwrap">
       <div class="envelope-wrapper" id="envelopeWrapper">
@@ -1173,7 +1027,7 @@
           <div class="pocket"></div>
         </div>
         <div class="letter-container" id="letterContainer">
-          <div class="card" id="mainCard">
+          <div class="card">
             <div class="cb t"></div>
             <div class="ibody">
               <div class="ifrm">
@@ -1230,8 +1084,8 @@
         </div>
       </div>
       <div class="arow" id="actionRow" style="display:none;">
-        <button class="bprint" onclick="window.print()">PRINT</button>
-        <button class="bclose" onclick="closeCard()">CLOSE</button>
+        <button class="bprint" id="printBtn">PRINT</button>
+        <button class="bclose" id="closeBtn">CLOSE</button>
       </div>
     </div>
   </div>
@@ -1241,72 +1095,104 @@
       const petals = document.getElementById('petals');
       const symbols = ['✦', '❋', '✧', '✺', '✶', '✷'];
       const colors = ['rgba(34,160,107,', 'rgba(212,175,55,', 'rgba(120,200,160,'];
-      for (let i = 0; i < 25; i++) {
+      for (let i = 0; i < 30; i++) {
         const petal = document.createElement('div');
         petal.className = 'petal';
         petal.textContent = symbols[i % symbols.length];
-        petal.style.cssText = 'left:' + Math.random() * 100 + 'vw;font-size:' + (8 + Math.random() * 10) + 'px;color:' + colors[i % 3] + (0.3 + Math.random() * 0.4) + ');animation-duration:' + (10 + Math.random() * 14) + 's;animation-delay:' + Math.random() * 10 + 's;';
+        petal.style.cssText = 'left:' + Math.random() * 100 + 'vw;font-size:' + (8 + Math.random() * 12) + 'px;color:' + colors[i % 3] + (0.25 + Math.random() * 0.45) + ');animation-duration:' + (12 + Math.random() * 14) + 's;animation-delay:' + Math.random() * 12 + 's;';
         petals.appendChild(petal);
       }
     })();
+
+    // Helper to format name
+    function formatGuestName(raw) {
+      if (!raw) return 'Dear Guest';
+      return raw.trim().split(/\s+/).map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+    }
+
+    let animationTimeout1, animationTimeout2;
+
     function openCard() {
       const input = document.getElementById('guestInput');
-      const name = input.value.trim();
+      let name = input.value.trim();
       if (!name) {
         input.classList.add('shake');
         input.focus();
-        setTimeout(function () { input.classList.remove('shake'); }, 400);
+        setTimeout(() => input.classList.remove('shake'), 400);
         input.placeholder = 'Please enter your name ✦';
         return;
       }
-      const formattedName = name.split(/\s+/).map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
-      document.getElementById('guestName').textContent = formattedName;
+      const formatted = formatGuestName(name);
+      document.getElementById('guestName').textContent = formatted;
 
-      // Reset state
       const wrapper = document.getElementById('envelopeWrapper');
       const actionRow = document.getElementById('actionRow');
+      const overlay = document.getElementById('overlay');
+
+      // Clear previous timeouts
+      if (animationTimeout1) clearTimeout(animationTimeout1);
+      if (animationTimeout2) clearTimeout(animationTimeout2);
+
+      // Reset all states
       wrapper.classList.remove('open', 'final-view');
       actionRow.style.display = 'none';
+      // Force reflow to ensure animation restart
+      void wrapper.offsetWidth;
 
-      document.getElementById('overlay').classList.add('show');
-      document.getElementById('overlay').scrollTop = 0;
+      overlay.classList.add('show');
       document.body.style.overflow = 'hidden';
+      overlay.scrollTop = 0;
 
-      // Animation sequence: 1) open envelope after 600ms
-      setTimeout(() => {
+      // Step 1: open envelope after a short delay
+      animationTimeout1 = setTimeout(() => {
         wrapper.classList.add('open');
-      }, 600);
+      }, 200);
 
-      // 2) reveal full card after 3s
-      setTimeout(() => {
+      // Step 2: show final card + buttons row after envelope flap opens
+      animationTimeout2 = setTimeout(() => {
         wrapper.classList.add('final-view');
         actionRow.style.display = 'flex';
-        document.getElementById('overlay').scrollTop = 0;
-      }, 3000);
+        // Scroll to ensure buttons are visible but keep card in view
+        setTimeout(() => {
+          const row = document.getElementById('actionRow');
+          if (row && overlay) {
+            row.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }, 100);
+      }, 1700); // smooth timing for mobile & desktop
     }
 
     function closeCard() {
-      document.getElementById('overlay').classList.remove('show');
+      const overlay = document.getElementById('overlay');
+      overlay.classList.remove('show');
       document.body.style.overflow = '';
-      // Reset after closing
+      // Reset envelope state after closing
       setTimeout(() => {
         const wrapper = document.getElementById('envelopeWrapper');
         wrapper.classList.remove('open', 'final-view');
-        document.getElementById('actionRow').style.display = 'none';
-      }, 500);
+        const actionRow = document.getElementById('actionRow');
+        actionRow.style.display = 'none';
+      }, 400);
     }
-    document.getElementById('guestInput').addEventListener('keydown', function (event) { if (event.key === 'Enter') openCard(); });
-    document.getElementById('guestInput').addEventListener('input', function () {
-      const el = this;
-      const start = el.selectionStart;
-      const end = el.selectionEnd;
-      const titled = el.value.replace(/(?:^|\s)\S/g, function (ch) { return ch.toUpperCase(); });
-      if (el.value !== titled) {
-        el.value = titled;
-        el.setSelectionRange(start, end);
+
+    // Event bindings
+    document.getElementById('openBtn').addEventListener('click', openCard);
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+    document.getElementById('closeBtn').addEventListener('click', closeCard);
+
+    document.getElementById('guestInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') openCard(); });
+    document.getElementById('guestInput').addEventListener('input', function (e) {
+      // live capitalization
+      const start = this.selectionStart;
+      const end = this.selectionEnd;
+      let val = this.value;
+      let transformed = val.replace(/(^|\s)\S/g, ch => ch.toUpperCase());
+      if (transformed !== val) {
+        this.value = transformed;
+        this.setSelectionRange(start, end);
       }
     });
-    document.getElementById('overlay').addEventListener('click', function (event) { if (event.target === this) closeCard(); });
+    document.getElementById('overlay').addEventListener('click', (e) => { if (e.target === document.getElementById('overlay')) closeCard(); });
   </script>
 </body>
 
