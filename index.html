@@ -804,12 +804,25 @@
 
     /* Mobile refinement */
     @media (max-width: 640px) {
+      .page {
+        padding: 1rem 0.65rem;
+      }
+
+      .shell {
+        width: min(100%, 420px);
+      }
+
       .inn {
         padding: 1.5rem 1rem 1.8rem;
       }
 
       .obord {
         padding: 1rem 0.8rem;
+      }
+
+      .badge,
+      .ilbl {
+        letter-spacing: .18em;
       }
 
       .mstar {
@@ -824,6 +837,23 @@
         font-size: 1.2rem;
       }
 
+      .fsub {
+        font-size: .72rem;
+      }
+
+      .ninput,
+      .obtn {
+        min-height: 48px;
+      }
+
+      .ovl {
+        padding: 0.7rem;
+      }
+
+      .iwrap {
+        min-height: calc(100vh - 1.4rem);
+      }
+
       .ibody {
         padding: 1.2rem 0.8rem;
       }
@@ -832,20 +862,57 @@
         padding: 1rem 0.8rem;
       }
 
+      .ibism {
+        font-size: 1.65rem;
+        line-height: 1.2;
+      }
+
+      .ibdg {
+        font-size: .58rem;
+        letter-spacing: .22em;
+        padding: 5px 14px;
+      }
+
       .iguest {
         font-size: 1.5rem;
+      }
+
+      .itxt,
+      .igreet,
+      .ifoot {
+        font-size: .84rem;
+      }
+
+      .inms {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .isepb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
       }
 
       .inbig {
         font-size: 1.1rem;
       }
 
+      .insub,
+      .wvenue,
+      .ifam {
+        font-size: .68rem;
+      }
+
       .wdate {
         font-size: 1rem;
+        line-height: 1.35;
       }
 
       .wtime {
         font-size: 0.75rem;
+        line-height: 1.5;
       }
 
       .wbox {
@@ -861,12 +928,13 @@
       .bprint,
       .bclose {
         font-size: 0.65rem;
-        padding: 0.7rem 0.2rem;
-        white-space: nowrap;
+        padding: 0.8rem 0.5rem;
+        white-space: normal;
+        min-width: 120px;
       }
 
       .envelope {
-        width: 280px;
+        width: min(280px, 84vw);
         height: 190px;
       }
 
@@ -901,6 +969,127 @@
 
       .letter-container {
         width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .page {
+        padding: 0.75rem 0.45rem;
+      }
+
+      .shell {
+        width: 100%;
+      }
+
+      .inn {
+        padding: 1.2rem 0.75rem 1.5rem;
+      }
+
+      .obord {
+        padding: 0.9rem 0.65rem;
+      }
+
+      .badge {
+        font-size: .52rem;
+        letter-spacing: .14em;
+        padding: 4px 10px;
+      }
+
+      .dname {
+        font-size: 1.05rem;
+      }
+
+      .ninput {
+        font-size: 1rem;
+        padding: 0.8rem 0.75rem;
+      }
+
+      .obtn {
+        font-size: .7rem;
+        letter-spacing: .16em;
+      }
+
+      .ovl {
+        padding: 0.5rem;
+      }
+
+      .ibody {
+        padding: 0.9rem 0.55rem;
+      }
+
+      .ifrm {
+        padding: 0.9rem 0.65rem;
+      }
+
+      .ibism {
+        font-size: 1.45rem;
+      }
+
+      .islm,
+      .igreet,
+      .itxt,
+      .ifoot {
+        font-size: .78rem;
+      }
+
+      .iguest {
+        font-size: 1.3rem;
+      }
+
+      .inbig {
+        font-size: 1rem;
+      }
+
+      .wdate {
+        font-size: 0.92rem;
+      }
+
+      .wtime,
+      .wvenue,
+      .ifam {
+        font-size: .66rem;
+      }
+
+      .arow {
+        gap: 8px;
+        padding: 0.7rem 0.8rem;
+        border-radius: 24px;
+      }
+
+      .bprint,
+      .bclose {
+        flex: 1 1 100%;
+      }
+
+      .envelope {
+        width: min(250px, 82vw);
+        height: 170px;
+      }
+
+      .envelope::before,
+      .envelope::after {
+        border-right-width: 125px;
+        border-left-width: 125px;
+        border-top-width: 85px;
+        border-bottom-width: 85px;
+      }
+
+      .flap {
+        border-left-width: 125px;
+        border-right-width: 125px;
+        border-top-width: 102px;
+      }
+
+      .flap::before {
+        top: -104px;
+        left: -125px;
+        border-left-width: 125px;
+        border-right-width: 125px;
+        border-top-width: 102px;
+      }
+
+      .seal {
+        top: 85px;
       }
     }
 
